@@ -4,5 +4,18 @@
 import PackageDescription
 
 let package = Package(
-    name: "SwiftUINavigation"
+    name: "SwiftUINavigations", platforms: [
+      .macOS(.v10_15), .iOS(.v14), .tvOS(.v14)
+    ],
+    products: [
+      .library(
+        name: "SwiftUINavigations",
+        targets: ["SwiftUINavigations"]),
+    ],
+    targets: [
+      .binaryTarget(
+        name: "SwiftUINavigations",
+        path: "./Sources/SwiftUINavigations.xcframework")
+    ]
+
 )
